@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>我的简历</title>
+</head>
+<body>
+  <div class="topNavBar">
+    <!-- div都要配一个class，否则不知道这个div表示什么意思 -->
+    <img src="#" alt="logo">  
+    <!-- img的src不知道，就用#代替 -->
+    <nav>
+      <ul>
+        <!-- ul和li必须配合使用 -->
+        <li><a href="#">关于</a></li>
+        <li><a href="#">技能</a></li>
+        <li><a href="#">作品</a></li>
+        <li><a href="#">经历</a></li>
+        <li><a href="#">博客</a></li>
+        <li><a href="#">联系方式</a></li>
+        <li><a href="#">其他</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="banner" style="background-image: url(#)"></div>
+    <!-- 背景大图一般不用img，用css来写，我们这里占个位 -->
+  <main>
+    <!-- 主要内容用main标签 -->
+    <div class="card">
+      <!-- 这里用一个card将卡片与下载链接区分开 -->
+      <div class="picture">
+            <img src="#" alt="photo">
+      </div>
+      <div class="text">
+          <div class="profile">
+            <span class="welcom">hello</span>
+            <h1>姚伟</h1>
+            <p>前端开发工程师</p>
+            <hr>
+            <!-- 水平分割线  -->
+            <dl>
+              <!-- dl：description list/ dt：description term /dd：description definition -->
+              <dt>年龄</dt>
+              <dd>25</dd>
+              <dt>城市</dt>
+              <dd>上海</dd>
+              <dt>邮箱</dt>
+              <dd>1063023601@qq.com</dd>
+              <dt>电话</dt>
+              <dd>123455678</dd>
+            </dl>
+          </div>
+          <footer class="media">
+            <!-- 长的像页脚，所以用footer标签，也要用class -->
+            <!-- a[href=#]*7>img[src=#][alt="..."],但是我这样好像没用 -->
+            <!-- 写完之后footer里面就有7个a标签，每个a标签里面有img -->
+            <a href="#"><img src="#" alt="..."></a>
+            <a href="#"><img src="#" alt="..."></a>
+            <a href="#"><img src="#" alt="..."></a>
+            <a href="#"><img src="#" alt="..."></a>
+            <a href="#"><img src="#" alt="..."></a>
+            <a href="#"><img src="#" alt="..."></a>
+            <a href="#"><img src="#" alt="..."></a>
+          </footer>      
+      </div>
+    </div>
+    <a class="button" href="#">下载PDF简历</a>
+    <!-- 下载链接用a标签来写，不要因为长的像button就用button标签 -->
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis amet corrupti autem enim deserunt ex laboriosam ad consectetur tenetur, omnis, est, consequuntur atque sapiente ipsa facilis explicabo nulla deleniti dolorum?</p>
+  </main>
+  <section>
+    <!-- section表示章节 -->
+    <h2>技能</h2>
+    <ol>
+      <li>html &amp; css3</li>
+      <!-- html中，如果有特殊符号需要转义&要写成&amp; -->
+      <li>JavaScript</li>
+      <li>jQuery</li>
+      <li>Vue</li>
+      <li>React</li>
+      <li>HTTP</li>
+    </ol>
+  </section>
+  <section>
+    <h2>作品集</h2>
+    <nav>
+      <ol>
+        <li>所有</li>
+        <li>框架</li>
+        <li>原生</li>
+      </ol>
+    </nav>
+    <div class="jobs">
+      <div class="big"></div>
+      <div class="small"></div>
+      <div class="small"></div>
+    </div>
+  </section>
+  <a href="#">link</a>
+</body>
+</html>
