@@ -11,10 +11,11 @@ body {
 a {
   text-decoration: none;
 }
-hr{
+
+hr {
   height: 0;
   border: none;
-  border-top:1px solid #DEDEDE;
+  border-top: 1px solid #DEDEDE;
 }
 
 .topNavBar-inner {
@@ -113,6 +114,7 @@ hr{
 .userCard .textAndPicture {
   padding: 57px 51px;
 }
+
 .userCard .welcome {
   background-color: #E8676B;
   font-weight: bold;
@@ -144,30 +146,54 @@ hr{
   margin-left: 43px;
   width: 471px;
 }
-.userCard .text h1{
+
+.userCard .text h1 {
   margin-top: 15px;
   margin-bottom: 9px;
 }
 
-.userCard .text hr{
+.userCard .text hr {
   margin: 26px 0px;
 }
 
 .userCard dl dt,
-.userCard dl dd{
+.userCard dl dd {
   float: left;
   margin-bottom: 18px;
 }
 
-.userCard dl dt{
+.userCard dl dt {
   width: 30%;
   font-weight: bold;
 }
-.userCard dl dd{
+
+.userCard dl dd {
   width: 70%;
   color: #9da0a7;
 }
 
-.userCard .media{
+.userCard .media {
   background-color: #e8676b;
+  text-align: center;
+}
+
+.userCard .media a {
+  /* border: 1px solid blue; */
+  display: inline-block;
+  border-radius: 50%;
+  width: 45px;
+  line-height: 21px;
+  padding: 12px 0;
+  margin:20px 16px;
+}
+
+.userCard .media a:hover {
+  background-color: #D05C60;
+}
+
+.userCard svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  vertical-align: top;
 }
