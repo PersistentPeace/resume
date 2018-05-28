@@ -1,0 +1,65 @@
+body{
+  margin: 0;
+}
+#nav{
+  /* border:1px solid  #000; */
+  float: left;
+  width: 100%;
+  height: 61px;
+  overflow: hidden;
+  position: fixed;
+}
+
+#nav .RScard{
+  /* border: 1px solid #000; */
+  float: left;
+  width: 100px;
+  line-height: 61px; 
+  padding-left: 18px;
+  font-size: 24px;
+  font-weight: bold;
+}
+#nav .RScard a{
+  text-decoration: none;
+}
+#nav .RS{
+  color: #E8676B;
+}
+#nav .card{
+  color: #9A9DA2;
+}
+#nav ul {
+  /* border: 1px solid #000; */
+  float: right;
+  line-height: 61px;
+  margin: 0px;
+  padding: 0px 100px 0px 0px;
+  list-style: none;
+}
+
+#nav ul li{
+  /* border: 1px solid #000; */
+  margin: 0 18px;
+  float: left;
+}
+
+#nav ul a{
+  color: #C8C9CD;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#nav ul a:hover{
+  border-bottom: 3px solid #E8676B;
+  padding-bottom: 12px;
+}
+
+.banner{
+  width: 1300px;
+  height: 538px;
+  /* border: 1px solid #000; */
+  background: url(./img/bg.jpg) no-repeat ;
+  background-size: contain;
+  /* position: fixed; */
+}
