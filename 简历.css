@@ -1,33 +1,38 @@
 body{
-  margin: 0;
+  background: #EFEFEF;
 }
-#nav{
+#nav {
   /* border:1px solid  #000; */
   float: left;
   width: 100%;
   height: 61px;
   overflow: hidden;
   position: fixed;
+  padding-top: 11px;
 }
 
-#nav .RScard{
+#nav .RScard {
   /* border: 1px solid #000; */
   float: left;
   width: 100px;
-  line-height: 61px; 
+  line-height: 61px;
   padding-left: 18px;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
 }
-#nav .RScard a{
+
+#nav .RScard a {
   text-decoration: none;
 }
-#nav .RS{
+
+#nav .RS {
   color: #E8676B;
 }
-#nav .card{
+
+#nav .card {
   color: #9A9DA2;
 }
+
 #nav ul {
   /* border: 1px solid #000; */
   float: right;
@@ -37,29 +42,51 @@ body{
   list-style: none;
 }
 
-#nav ul li{
+#nav ul li {
   /* border: 1px solid #000; */
   margin: 0 18px;
   float: left;
 }
 
-#nav ul a{
+#nav ul a {
   color: #C8C9CD;
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
 }
 
-#nav ul a:hover{
+#nav ul a:hover {
   border-bottom: 3px solid #E8676B;
   padding-bottom: 12px;
 }
 
-.banner{
-  width: 1300px;
-  height: 538px;
+.banner {
+  /* width: 1300px; */
+  /* 宽度自适应，不要写宽度 */
+  height: 516px;
   /* border: 1px solid #000; */
-  background: url(./img/bg.jpg) no-repeat ;
-  background-size: contain;
+  background: url(./img/bg.jpg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* 不要用contain，contain只是包住这个图片。当div尺寸发生变化时，图片大小会跟着变。 然后图片水平和垂直方向都是居中的，div大小改变，图像也跟着变*/
   /* position: fixed; */
+}
+
+.banner .mask {
+  height: 516px;
+  background: rgba(46,54,67,0.8);
+}
+
+
+#idCard {
+  border: 1px solid red;
+  max-width: 930px;
+  /* height: 528px; */
+  /* 不要给高度 */
+  /* border: 2px solid red; */
+  margin: 0 auto;
+  /* margin-top: -345px;  */
+}
+.welcome{
+  background: #E8676B;
 }

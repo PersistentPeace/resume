@@ -1,0 +1,265 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background: #efefef;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.topNavBar {
+  padding: 16px 0px;
+  /* 滚动拖动条可见这是固定不动的，所以相对屏幕固定 */
+  position: fixed;
+  /* 脱离文档流后，块级元素宽度自适应 */
+  width: 100%;
+  /* 但width：100%容易出现bug，这里由于width+还有padding，
+  所以宽度比body还要宽 ，解决办法，这个div里面在嵌套一个div
+  .topNavBar负责width=100%，里面的div负责内边距的问题,改了之后要
+  要注意，clearfix要移植一下*/
+}
+
+.topNavBar-inner {
+  padding: 0px 16px;
+}
+
+.topNavBar .logo {
+  float: left;
+  font-size: 24px;
+  font-family: "Open Sans", "Arial black";
+}
+
+.topNavBar .logo .rs {
+  color: #e6686a;
+  margin-right: 4px;
+}
+
+.topNavBar .logo .card {
+  color: #9A9DA2;
+}
+
+.topNavBar nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* 与a浮动到一行 */
+  float: right;
+}
+
+.topNavBar nav ul li {
+  float: left;
+  margin: 0 17px;
+}
+
+/* 先做字体高度，再看水平空隙，再看垂直空隙。 */
+
+.topNavBar nav ul li a {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  /* 间距，给li标签 */
+  /* 字体加粗 */
+  font-weight: bold;
+  border-top: 3px solid transparent;
+  /* 上下的border和padding一样，文字就是居中 */
+  border-bottom: 3px solid transparent;
+  padding: 9px 1px 0 0;
+  /* 给了上下内边距后，li没有包住a标签，
+  此时将a变成块级元素，高度由内容决定即可包住a */
+  display: block;
+}
+
+/* 让nav和logo在一行，一个块级元素，一个行内元素 ，浮动+clearfix*/
+
+.topNavBar nav ul li a:hover {
+  border-bottom: 3px solid #e06567;
+}
+
+/* 背景图 */
+
+.banner {
+  /* border: 1px solid yellow; */
+  background-image: url(./img/bg.jpg);
+  /* 图片的高度是0，因为这个.banner这个div里面没有内容，背景图不能当内容 */
+  /* 所以要手动设置一个高度 */
+  height: 515px;
+  /* 图片居中 */
+  background-position: center center;
+  /* 图片与div的大小自适应 */
+  background-size: cover;
+}
+
+/* 背景图上的透层  */
+
+.banner .mask {
+  height: 515px;
+  /* 不要写宽度,宽度是自适应的 */
+  /* 给个颜色，这里可见颜色是半透明的 */
+  background-color: rgba(48, 57, 70, 0.8);
+}
+
+main{
+  margin-top: -340px;
+}
+
+.userCard {
+  /* border: 2px solid red; */
+  /* 设置卡片的宽度，用最大宽度，不要用宽度
+  好处是当屏幕比940小的时候，会自适应 */
+  max-width: 940px;
+  /* 有宽度的div居中 */
+  background: #fff;
+  margin: 0 auto;
+  /* 卡片上移动 */
+}
+
+
+.userCard .textAndPicture{
+  /* 当外面的框大小确定的时候，可以在浮动元素和外边框之间隔一个div
+  专门用来做样式 */
+  /* border: 2px solid #000; */
+  padding: 50px 50px 40px;
+}
+
+/* 让图片和文字浮动在一行 */
+.userCard .picture {
+  float: left;
+}
+
+.userCard .text {
+  float: left;
+  margin-left: 50px;
+  /* 发现hr不够宽，现在给一个宽度。 */
+  width: 470px;
+  /* 调文本间距的时候发现h1，p，hr等默认的样式，全部去掉。 */
+}
+
+
+.userCard .welcome {
+  color: #fff;
+  background: #E8676B;
+  /* 然后设置大小，让文字水平垂直居中：
+  display:inline-block width height line-height text-align
+  这是新人做法 */
+  /* 老司机做法：用padding去撑，而且不管里面字多少，都是居中 */
+  display: inline-block;
+  padding: 4px 16px;
+  /* 这样写可能的问题是在不同的机器上显示的高度不一样，所以在
+   给个行高,注意，行高不包括内边距的高度 */
+  line-height: 22px;
+  position: relative;
+}
+
+.userCard .welcome .triangle {
+  /* 行内元素里面不能加块级元素！！！ */
+  display: block;
+  border: 8px solid transparent;
+  border-left-color: #E8676B;
+  border-top-width: 0px;
+  width: 0px;
+  /* 这里宽度要写，不写的话会自适应，占一行的宽度 */
+  /* 现在三角形在welcome里面，所以要做定位，脱离文档流，相对welcome定位 */
+  position: absolute;
+  top: 100%;
+  left: 5px;
+}
+
+.userCard h1{
+  margin-top: 26px;
+}
+.userCard p{
+  margin-top: 6px;
+}
+
+.userCard hr{
+  /* 默认的hr上下外8px，border1px，高度为0.内部阴影 
+  我们要的不是这样的hr，所以重写*/
+  height: 0;
+  border: none;
+  border-top: 1px solid #DEDEDE;
+  /* 在加上外边距隔开 */
+  margin: 20px 0; 
+}
+
+/* 对于dl的dt和dd来说，全部左幅，然后两个块占一行高度即可。 */
+.userCard dl dt,
+.userCard dl dd{
+  float: left;
+  padding: 5px 0;
+}
+.userCard dl dt{
+  width: 30%;
+  font-weight: bold;
+}
+.userCard dl dd{
+  color: #9da0a7;
+  width: 70%;
+}
+
+.userCard footer.media{
+  background: #E8676B;
+  /* 先不要给高度，用内容撑，不够在补。 */
+  /* 图标要居中 */
+  text-align: center;
+}
+
+/* 图标上iconfont.cn去找,使用方法有,图标的样式给内部样式表也可以
+写在外部样式表里面也可以，并且样式可以改 */
+
+
+
+.userCard .media .icon{
+  /* icon可以设置宽高，他不是a标签 */
+  width: 30px;  
+  height: 30px;
+  /* svg改变颜色的语法是fill */
+  fill: white;
+  /* 垂直居中 */
+  vertical-align: middle;
+}
+
+.userCard footer.media a{
+  /* border: 1px solid #000; */
+  /* 如果a标签不变成行内块的话，会保不住这些图标 */
+  display: inline-block;
+  border-radius: 50%;
+  /* 但这样不够大，给边框一个宽高 */
+  width: 50px;
+  /* height: 40px;
+  line-height: 40px;*/
+  /* 但这样的问题是行高写了之后没用，还是无法居中。
+  此时不写高度，行高给30，上下padding5px居中。 */
+  /* line-height: 40px; */
+  padding: 10px 0;
+
+  /* 在给一个margin让图标之间和上下之间的空间 */
+  margin: 17px 18px;
+}
+.userCard footer.media a:hover{
+  background: #D05C60;
+}
+
+main .downloadResume{
+  display: inline-block;
+  font-size: 14px;
+  /* 文字要垂直居中 */
+  line-height: 16px;
+  text-decoration: none;
+  color: #434A56;
+  font-weight: bold;
+  text-align: center;
+  padding:21px 55px;
+  border: 1px solid #CBCDCF;
+现在要水平居中，这个元素是一个水
+  margin: 0 auto;
+
+}

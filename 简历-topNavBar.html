@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>方方的个人简历</title>
+    <link rel="stylesheet" href="./c.css">
+    <script src="//at.alicdn.com/t/font_686179_wkn3gyw3ggyqr529.js"></script>
+    <style type="text/css">
+      /* .icon的这些属性是可以调节的 */
+      .icon {
+         width: 1em; height: 1em;
+         vertical-align: -0.15em;
+         fill: currentColor;
+         overflow: hidden;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="topNavBar">
+      <div class="topNavBar-inner clearfix">
+        <a class="logo " href="#" alt="logo">
+          <span class="rs">RS</span><span class="card">card</span>
+        </a>
+        <nav>
+          <ul class="clearfix">
+            <li><a href="#">关于</a></li>
+            <li><a href="#">技能</a></li>
+            <li><a href="#">作品</a></li>
+            <li><a href="#">博客</a></li>
+            <li><a href="#">日历</a></li>
+            <li><a href="#">联系方式</a></li>
+            <li><a href="#">其他</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="mask"></div>
+    </div>
+    <main>
+      <div class="userCard">
+        <div class="textAndPicture clearfix">
+          <div class="picture" >
+            <img src="./img/avatar.jpg" width=299 height=347 alt="头像">
+            <!-- 当图片的大小不是想要的大小的时候，可以手动设置。 -->
+          </div>
+          <div class="text">
+            <span class="welcome">
+              <!-- 这里用span而不用div的原因，考虑到等下变宽高直接给padding即可。 
+              由于要设置行高，还要做三角形，所以变成行内块-->
+              hello
+              <span class="triangle"></span>
+            </span>
+            <h1>姚 &nbsp;伟</h1>
+            <p>前端开发工程师</p>
+            <hr>
+            <dl>
+              <dt>年龄</dt>
+              <dd>29</dd>
+              <dt>住址</dt>
+              <dd>xxxxxx</dd>
+              <dt>电话</dt>
+              <dd>xxxxxxxxxx</dd>
+              <dt>邮箱</dt>
+              <dd>xxxxxxxxxx</dd>
+            </dl>
+          </div>
+        </div>
+        <footer class="media">
+          <a href="#">
+            <!-- 这些就是svg做图标的方法 -->
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-github"></use>
+            </svg>
+          </a>  
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-qq"></use>
+            </svg>
+          </a>  
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-weibo"></use>
+            </svg>
+          </a>  
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-twitter"></use>
+            </svg>
+          </a>  
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-xiangmulan-weixinhao"></use>
+            </svg>
+          </a>  
+        </footer>
+      </div>
+      <!-- 点击a标记 在新页面打开，下载内容。 -->
+      <a class="downloadResume" href="./img/avatar.jpg" target="_blank" download>DOWNLOAD RESUME</a>
+    </main>
+  </body>
+</html>
