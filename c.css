@@ -1,12 +1,14 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
 }
+
 body {
   background: #efefef;
 }
-
-
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
+}
 a {
   text-decoration: none;
 }
@@ -107,7 +109,7 @@ a {
   background-color: rgba(48, 57, 70, 0.8);
 }
 
-main{
+main {
   margin-top: -340px;
 }
 
@@ -120,10 +122,11 @@ main{
   background: #fff;
   margin: 0 auto;
   /* 卡片上移动 */
+  /* 给卡片一个阴影 */
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-
-.userCard .textAndPicture{
+.userCard .textAndPicture {
   /* 当外面的框大小确定的时候，可以在浮动元素和外边框之间隔一个div
   专门用来做样式 */
   /* border: 2px solid #000; */
@@ -131,6 +134,7 @@ main{
 }
 
 /* 让图片和文字浮动在一行 */
+
 .userCard .picture {
   float: left;
 }
@@ -142,7 +146,6 @@ main{
   width: 470px;
   /* 调文本间距的时候发现h1，p，hr等默认的样式，全部去掉。 */
 }
-
 
 .userCard .welcome {
   color: #fff;
@@ -173,39 +176,43 @@ main{
   left: 5px;
 }
 
-.userCard h1{
+.userCard h1 {
   margin-top: 26px;
 }
-.userCard p{
+
+.userCard p {
   margin-top: 6px;
 }
 
-.userCard hr{
+.userCard hr {
   /* 默认的hr上下外8px，border1px，高度为0.内部阴影 
   我们要的不是这样的hr，所以重写*/
   height: 0;
   border: none;
   border-top: 1px solid #DEDEDE;
   /* 在加上外边距隔开 */
-  margin: 20px 0; 
+  margin: 20px 0;
 }
 
 /* 对于dl的dt和dd来说，全部左幅，然后两个块占一行高度即可。 */
+
 .userCard dl dt,
-.userCard dl dd{
+.userCard dl dd {
   float: left;
   padding: 5px 0;
 }
-.userCard dl dt{
+
+.userCard dl dt {
   width: 30%;
   font-weight: bold;
 }
-.userCard dl dd{
+
+.userCard dl dd {
   color: #9da0a7;
   width: 70%;
 }
 
-.userCard footer.media{
+.userCard footer.media {
   background: #E8676B;
   /* 先不要给高度，用内容撑，不够在补。 */
   /* 图标要居中 */
@@ -215,11 +222,9 @@ main{
 /* 图标上iconfont.cn去找,使用方法有,图标的样式给内部样式表也可以
 写在外部样式表里面也可以，并且样式可以改 */
 
-
-
-.userCard .media .icon{
+.userCard .media .icon {
   /* icon可以设置宽高，他不是a标签 */
-  width: 30px;  
+  width: 30px;
   height: 30px;
   /* svg改变颜色的语法是fill */
   fill: white;
@@ -227,7 +232,7 @@ main{
   vertical-align: middle;
 }
 
-.userCard footer.media a{
+.userCard footer.media a {
   /* border: 1px solid #000; */
   /* 如果a标签不变成行内块的话，会保不住这些图标 */
   display: inline-block;
@@ -240,15 +245,25 @@ main{
   此时不写高度，行高给30，上下padding5px居中。 */
   /* line-height: 40px; */
   padding: 10px 0;
-
   /* 在给一个margin让图标之间和上下之间的空间 */
   margin: 17px 18px;
 }
-.userCard footer.media a:hover{
+
+.userCard footer.media a:hover {
   background: #D05C60;
 }
 
-main .downloadResume{
+/* 让下载按钮居中
+现在要水平居中，这个元素是一个行内块，两边没有宽度
+，可以在他之外加一个块级元素,让后让这个块级元素内的文本居中
+注意，不能给行内块，行内块不是块级元素，
+不能用margin：0 auto！！！！*/
+
+main .downloadResume-wrapper {
+  text-align: center;
+}
+
+main .downloadResume {
   display: inline-block;
   font-size: 14px;
   /* 文字要垂直居中 */
@@ -257,9 +272,132 @@ main .downloadResume{
   color: #434A56;
   font-weight: bold;
   text-align: center;
-  padding:21px 55px;
+  padding: 21px 55px;
   border: 1px solid #CBCDCF;
-现在要水平居中，这个元素是一个水
-  margin: 0 auto;
+  border-radius: 4px;
+  margin: 32px 0px;
+}
+
+/* 方方的思路：不要把所有的div写一个宽度，用一个div将他们包起来，
+每个div是自己的div，让不同的div之间没有关系是比较好的 */
+
+main .downloadResume:hover {
+  /* 给边框加阴影，可以使用css shadow generator */
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  /* 方方写了一个过渡的属性：transition：box-shaodow 1s； */
+  /* transition: box-shadow 0.5s; */
+}
+
+/* 文本，宽度和卡片的宽度一样，所以可以拷贝过来 */
+
+main .intro {
+  color: #434A56;
+  max-width: 940px;
+  margin: 8px auto;
+  /* 文本居中 */
+  text-align: center;
+  /* 文本的高度 */
+  line-height: 1.8em;
+  font-size: 20px;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section.skills,
+section.portfolio{
+  max-width: 940px;
+  margin:60px auto; 
 
 }
+section.skills h2,
+section.portfolio h2 {
+  text-align: center;
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+section.skills ul{
+  background: #fff;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
+  list-style: none;
+  padding: 43px 50px 3px;
+}
+/* li左右布局 */
+section.skills ul li{
+  float: left;
+  width: 48%;
+}
+/* 两个进度条之间的空隙 
+nth-child 表示选种第n个子元素，even表示偶数
+还可以写odd表示选中奇数的
+
+以冒号开头的叫做伪类，两个冒号开头的叫伪元素*/
+section.skills ul li:nth-child(even){
+  float: right;
+}
+
+section.skills .progressBar h3{
+  font-size: 14px;
+  line-height: 1.1;
+  padding-right: 40px;
+
+}
+/* 进度条，两个长方形 */
+section.skills .progressBar{
+  height: 5px;
+  background: #FAE0E0;
+  margin: 4px 0px 40px;
+}
+
+section.skills .progressBar .progress{
+  /* height: 3px; */
+  /* 另外，如果父元素的高度确定，子元素的高度可以
+  写100%,好处是调节父元素高度的时候，字元素可以不管 */
+  height: 100%;
+  width: 70%;
+  background: #E8676B;
+  border-radius: 3px;
+}
+
+section.portfolio nav {
+  text-align: center;
+}
+
+/* 让浮动的元素居中：让他们的父元素居中即可，但父元素ul是块元素，
+所以将他变成行内块元素即可，变成行内块高度会多出来一点，所以要
+加上vertical-align来清除bug。 */
+section.portfolio ul {
+  list-style: none;
+  /* 将元素变成行内块，一定要记得加vertical-align：top */
+  display: inline-block;
+  vertical-align: top;
+}
+section.portfolio ul li{
+  float: left;
+  /* 解决字体间的间距，给个margin-left即可 */
+  margin-left: 40px;
+}
+
+/* 解决第一个元素左侧外边距
+用nth-child即可,第一个元素还可以缩写
+section.portfolio ul li:first-child
+ */
+section.portfolio ul li:nth-child(1){
+  margin-left: 0px;
+}
+
+/* 做导航条 */
+section.portfolio  nav .bar{
+  border: 1px solid #000;
+} 
+/* 缩导航条的宽度，.bar宽度和nav一样宽，让nav变窄即可 */
+section.portfolio nav {
+  /* 让nav变成行内块，宽度由内容决定，现在是ul决定 */
+  display: inline-block;
+  vertical-align: center;
+  加了之后发现不居中了，
+}
+
+
+
