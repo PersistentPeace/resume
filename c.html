@@ -147,14 +147,41 @@
       <h2>Portfolio</h2>
       <nav>
         <ul class="clearfix">
-          <li>ALL</li>
-          <li>FRAME</li>
-          <li> NATIVE JS</li>
+          <li id="portfolio1">ALL</li>
+          <li id="portfolio2">FRAME</li>
+          <li id="portfolio3"> NATIVE JS</li>
         </ul>
         <!-- 做导航文字下面的bar，由于点击不同的文字
         导航条是连在一起的，所以不能分开写 -->
-        <div class="bar"></div>
+        <div id="portfolioBar" class="bar state-1">
+          <!-- 这里类似上面的的进度条，两个div，一个做底色 -->
+          <div class="bar-inner"></div>
+        </div>
+        <script>
+          portfolio1.onclick = function(){
+            portfolioBar.className = "bar state-1"
+          }
+          portfolio2.onclick = function(){
+            portfolioBar.className = "bar state-2"
+          }
+          portfolio3.onclick = function(){
+            portfolioBar.className = "bar state-3"
+          }
+        </script>
       </nav>
+      <div class="works">
+        <div class="portfolio1">
+          <img src="./img/p1.jpg" alt="p1">
+        </div>
+        <div class="portofolio23">
+          <div class="portfolio2">
+            <img src="./img/p2.jpg" alt="p2">
+          </div>
+          <div class="portfolio3">
+            <img src="./img/p3.jpg" alt="p3">
+          </div>
+        </div>
+      </div>
     </section>
   </body>
 </html>

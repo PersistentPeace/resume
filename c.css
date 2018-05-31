@@ -178,6 +178,7 @@ main {
 
 .userCard h1 {
   margin-top: 26px;
+  font-weight: bold;
 }
 
 .userCard p {
@@ -360,6 +361,9 @@ section.skills .progressBar .progress{
   border-radius: 3px;
 }
 
+section.portfolio{
+  text-align: center;
+}
 section.portfolio nav {
   text-align: center;
 }
@@ -377,6 +381,10 @@ section.portfolio ul li{
   float: left;
   /* 解决字体间的间距，给个margin-left即可 */
   margin-left: 40px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+  color: #434343;
 }
 
 /* 解决第一个元素左侧外边距
@@ -389,15 +397,96 @@ section.portfolio ul li:nth-child(1){
 
 /* 做导航条 */
 section.portfolio  nav .bar{
-  border: 1px solid #000;
+  height: 5px;
+  background: #fff;
+  /* 条与字分离 */
+  margin-top: 10px;
 } 
 /* 缩导航条的宽度，.bar宽度和nav一样宽，让nav变窄即可 */
 section.portfolio nav {
   /* 让nav变成行内块，宽度由内容决定，现在是ul决定 */
   display: inline-block;
   vertical-align: center;
-  加了之后发现不居中了，
+  /* 加了之后发现不居中了，变成了行内块了，所以要给section加一个
+  text-align：center； */
+  border-radius: 2px;
+  
+}
+section.portfolio  nav .bar-inner{
+  height: 100%;
+  background: #E8676B;
+  border-radius: 2px;
+  /* 加上动画，鼠标点击的时候可以过渡 */
+  transition: all 0.3s;
+  /* 表示所有的变化都用0.3s来完成 */
 }
 
+/* 做点到某个作品分类的时候导航条到对应的导航条下面 */
+/* 可以用margin来做，也可以用绝对定位来做 */
+
+/* 对应点到某一个的时候导航条要调到对应的导航上用js来做 */
+/* 状态机 由于是bar的状态，所以给三种bar三种状态*/
+/* 先要选中这个状态，.bar和.state-1中间没有空格，表示元素同时符合这
+两个状态时 */
+section.portfolio  nav .bar.state-1 .bar-inner{
+  margin-left: 0px;
+  width: 30px;
+}
+
+section.portfolio  nav .bar.state-2 .bar-inner{
+  margin-left: 53px;
+  width: 62px;
+}
+section.portfolio  nav .bar.state-3 .bar-inner{
+  margin-left: 143px;
+  width: 66px;
+}
+
+/* 让用户点击的时候可以出现对应的状态，先给三个按钮加id
+给三种状态也要一个id
+然后写脚本 */
+
+/* 在加动画，在bar-inner */
 
 
+ section.portfolio .portfolio1{
+  float: left;
+}
+/* section.portfolio .portfolio23{
+  float: right;
+} 
+section.portfolio .portfolio3{
+  padding-bottom: 16px;
+} */
+
+/* 方方用相对定位来做 */
+section.portfolio .works{
+  height: 600px;
+  position: relative;
+  margin-top: 30px;
+}
+
+section.portfolio .portfolio1,
+section.portfolio .portfolio2,
+section.portfolio .portfolio3{
+  position: absolute;
+  /* border: 1px solid #000; */
+}
+
+section.portfolio img{
+  vertical-align: bottom;
+}
+
+section.portfolio .portfolio1{
+  top: 0px;
+  left: 0px;
+}
+section.portfolio .portfolio2{
+  top: 0px;
+  right: 0px;
+}
+
+section.portfolio .portfolio3{
+  bottom: 22px;
+  right: 0px; 
+}
